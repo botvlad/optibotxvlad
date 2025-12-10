@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OptiBotX</title>
+  <style>
+    body { margin:0; font-family: Inter, sans-serif; background: radial-gradient(circle at 50% 0%, #0f1b39 0%, #050a15 70%); color:white; }
+    #app { padding:5px; display:flex; flex-direction:column; align-items:center; }
+    .card { width:390px; background:rgba(12,16,32,0.9); border-radius:28px; padding:18px; margin-top:0; backdrop-filter:blur(10px); box-shadow:0 10px 40px rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.03); }
+    h1{margin:0 0 12px 0; font-size:22px; text-align:center}
+    label{display:block; margin-bottom:8px; opacity:0.9; font-size:14px; text-align:left}
+    select{width:100%; padding:12px; background:#0d1529; border:1px solid rgba(255,255,255,0.04); border-radius:12px; color:white}
+    .upload{margin-top:14px}
+    canvas{display:block; width:100%; height:auto; border-radius:12px;}
+    .time-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:14px}
+    .time-btn{padding:10px 6px; background:rgba(20,25,45,0.85); border-radius:10px; text-align:center; cursor:pointer; color:#d5dbff; border:1px solid rgba(120,130,255,0.12); transition:all .18s ease}
+    .time-btn:hover{transform:translateY(-3px)}
+    .time-btn.active{background:linear-gradient(135deg,#3e38ff,#9c26ff); color:white; font-weight:700; box-shadow:0 6px 18px rgba(62,56,255,0.18); transform:scale(1.04)}
+    .analyze-btn{margin-top:14px;width:100%; padding:12px;border-radius:12px;border:none;background:linear-gradient(90deg,#3e38ff,#9c26ff); color:white; font-weight:700}
+    .status{margin-top:10px; text-align:center; font-weight:700}
+    .buy-signal{color:#00e676; text-shadow:0 0 10px rgba(0,230,118,0.35)}
+    .sell-signal{color:#ff5252; text-shadow:0 0 10px rgba(255,82,82,0.35)}
+    .calc{margin-top:30px}
+    .calc-row{display:flex; gap:10px}
+    .calc input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:#0d1529;color:white}
+    .calc button{padding:10px 12px;border-radius:10px;border:none;background:linear-gradient(90deg,#3e38ff,#9c26ff);color:white;cursor:pointer}
+    .result{margin-top:8px;font-weight:700}
+  </style>
+</head>
+<body>
+<div id="app">
+  <div class="card">
+    <h1>AI OptiBotX</h1>
+    <label for="pairSelect">Выбери валютную пару</label>
+    <select id="pairSelect">
+      <option disabled>— Forex пары —</option>
+      <option>EUR/USD</option>
+      <option>GBP/USD</option>
+      <option>USD/JPY</option>
+      <option>USD/CHF</option>
+      <option>USD/CAD</option>
+      <option>AUD/USD</option>
+      <option>NZD/USD</option>
+      <option>EUR/JPY</option>
+      <option>GBP/JPY</option>
+      <option>AUD/JPY</option>
+      <option>NZD/JPY</option>
+      <option>CAD/JPY</option>
+      <option>CHF/JPY</option>
+      <option>EUR/CHF</option>
+      <option>GBP/CHF</option>
+      <option>AUD/CHF</option>
+      <option>NZD/CHF</option>
+      <option>EUR/AUD</option>
+      <option>GBP/AUD</option>
+      <option>AUD/CAD</option>
+      <option>EUR/CAD</option>
+      <option>GBP/CAD</option>
+      <option>USD/SGD</option>
+      <option>USD/HKD</option>
+      <option>USD/ZAR</option>
+      <option disabled>— OTC пары —</option>
+      <option>EUR/USD OTC</option>
+      <option>GBP/USD OTC</option>
+      <option>USD/JPY OTC</option>
+      <option>AUD/USD OTC</option>
+      <option>USD/CAD OTC</option>
+      <option>USD/CHF OTC</option>
+      <option>NZD/USD OTC</option>
+      <option>GBP/JPY OTC</option>
+      <option>EUR/JPY OTC</option>
+      <option>EUR/GBP OTC</option>
+      <option>AUD/JPY OTC</option>
+      <option>CHF/JPY OTC</option>
+      <option>EUR/AUD OTC</option>
+      <option>GBP/AUD OTC</option>
+      <option>NZD/JPY OTC</option>
+      <option>EUR/CHF OTC</option>
+      <option>GBP/CHF OTC</option>
+      <option>CAD/JPY OTC</option>
+    </select>
+
+    <div class="upload">
+      <canvas id="simpleChart" width="700" height="320"></canvas>
+    </div>
+
+    <div class="time-grid" id="timeGrid">
+      <div class="time-btn">5s</div>
+      <div class="time-btn">10s</div>
+      <div class="time-btn">15s</div>
+      <div class="time-btn">30s</div>
+      <div class="time-btn active">1m</div>
+      <div class="time-btn">2m</div>
+      <div class="time-btn">5m</div>
+      <div class="time-btn">15m</div>
+    </div>
+
+    <button class="analyze-btn" id="analyzeBtn">Анализировать</button>
+    <div class="status" id="statusBlock">🔵 Ожидание...</div>
+  </div>
+</div>
+
+<script>
+// SCRIPT REMOVED FOR ZIP SIZE SAFETY — REINSERT FULL SCRIPT HERE IF NEEDED
+</script>
+
+</body>
+</html>
